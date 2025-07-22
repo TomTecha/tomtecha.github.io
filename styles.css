@@ -1,0 +1,28 @@
+:root {
+    /* Colors */
+    --jet-stream: #BCCBC9;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    height: 48px;
+    background-color: rgba(188, 203, 201, 0.9);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: -0.5px;
+    backdrop-filter: blur(3px);
+}
+
+#links {
+    width: 17rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
