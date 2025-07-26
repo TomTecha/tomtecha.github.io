@@ -32,6 +32,7 @@ body {
     position: sticky;
     top: -0.5px;
     backdrop-filter: blur(3px);
+    z-index: 1;
 }
 
 .navbar-content {
@@ -83,6 +84,7 @@ body {
     color: var(--davys-grey); 
     text-decoration: none;
     font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 13px;
 }
 
 #navbar #links a:hover {
@@ -117,6 +119,7 @@ body {
         DarkSlateBlue
     );
     background-clip: text;
+    margin-bottom: 1rem;
 }
 
 #name {
@@ -133,7 +136,6 @@ body {
     margin: 2rem 1.5rem;
     height: 360px;
     width: calc(265px + 1rem);
-    /*background-color: var(--platinum);*/
     position: relative;
 }
 
@@ -165,6 +167,7 @@ div.service-block:nth-of-type(4) img {
     width: 80%;
     position: relative;
     bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .service-block img {
@@ -172,9 +175,9 @@ div.service-block:nth-of-type(4) img {
     max-height: 90%;
 }
 
-/* Projects section */
+/* About section */
 #about-us {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -191,53 +194,7 @@ div.service-block:nth-of-type(4) img {
     border-bottom: solid 1.5px var(--davys-grey);
 }
 
-#project-tiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-}
 
-.project-tile {
-    margin: 35px;
-    height: 16rem;
-    width: 14rem;
-    border-radius: 10%;
-    background-color: var(--platinum);
-    background: linear-gradient(
-        var(--columbia-blue),
-        var(--platinum),
-        var(--davys-grey)
-    );
-    color: var(--ash-gray);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.project-img {
-    height: 50%;
-    width: 85%;
-}
-
-.project-img img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10% / 15%;
-}
-
-.img-caption {
-    width: 80%;
-    font-family: Jost, Helvetica, sans-serif;
-}
-
-.img-caption h3 {
-    font-size: 1rem;
-}
-
-.img-caption p {
-    line-height: 1.2rem;
-}
 
 /* Contacts section */
 #contacts {
