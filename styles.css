@@ -1,6 +1,7 @@
 :root {
     --ash-gray: #AAB8B6;
     --jet-stream: #BCCBC9;
+    --lighter-jet-stream: #DDE5E4;
     --columbia-blue: #C0DFD9;
     --platinum: #E9ECE6;
     --davys-grey: #474D4C; /* used for text */
@@ -19,14 +20,14 @@ html {
 
 body {
     font-family: Helvetica;
-    background-color: var(--ash-gray);
+    background-color: var(--jet-stream);
     color: var(--davys-grey);
 }
 
 /* Navbar styling */
 #navbar {
     height: 44px;
-    background-color: rgba(188, 203, 201, 0.85);
+    background-color: rgba(221, 229, 228, 0.85);
     display: flex;
     align-items: center;
     position: sticky;
@@ -89,7 +90,7 @@ body {
 
 #navbar #links a:hover {
     text-decoration: underline;
-    color: LightCoral;
+    color: DarkGreen;
 }
 
 .highlighted {
@@ -97,11 +98,12 @@ body {
     color: LightCoral !important;
 }
 
-/* Services section */
-#services {
+/* entry section */
+#entry-section {
     padding: 3rem 0 4rem;
     height: 100vh;
-    background-color: var(--ash-gray);
+    max-height: 900px;
+    background-color: var(--jet-stream);
     color: var(--davys-grey);
     display: flex;
     flex-direction: column;
@@ -119,7 +121,6 @@ body {
         DarkSlateBlue
     );
     background-clip: text;
-    margin-bottom: 1rem;
 }
 
 #name {
@@ -128,7 +129,11 @@ body {
     color: rgba(211, 211, 211, 0.25);
 }
 
-#services-list {
+#entry-section h2 {
+    font-weight: initial;
+}
+
+#services-graphics {
     display: flex;
 }
 
@@ -175,18 +180,18 @@ div.service-block:nth-of-type(4) img {
     max-height: 90%;
 }
 
-/* About section */
-#about-us {
-    min-height: 80vh;
+/* services section */
+#services {
+    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: var(--jet-stream); 
-    padding: 2rem 0;
+    justify-content: space-evenly;
+    background-color: var(--columbia-blue); 
+    padding: 5rem 0;
 }
 
-#about-us h1 {
+#services h1 {
     font-family: 'Gabarito', Helvetica;
     font-weight: initial;
     margin-bottom: 15px;
@@ -194,64 +199,88 @@ div.service-block:nth-of-type(4) img {
     border-bottom: solid 1.5px var(--davys-grey);
 }
 
+#services-and-illustrations {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    max-width: 1224px;
+}
 
+.service {
+    font-family: 'Jost', Helvetica;
+    line-height: 2rem;
+    font-size: 1.1rem;
+}
 
-/* Contacts section */
-#contacts {
+#wind-turbine-img {
+    max-height: 500px;
+    transform: scaleX(-1);
+}
+
+/* about us section */
+#about-us {
     height: 500px;
-    padding-top: 125px;
-    border-top: solid 1.5rem var(--columbia-blue);
+    border-top: solid 1.5rem var(--ash-gray);
+    border-bottom: solid 1.5rem var(--ash-gray);
     font-family: Jost;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
 
-#contacts p {
-    font-size: 125%;
+#about-us h2 {
+    font-weight: initial;
+    font-size: 1.5rem;
 }
 
-#icons {
-    margin-top: 100px;
-    width: min(25rem, 100vw);
+#tomtecha-info {
+    width: 600px;
+    font-size: 1.1rem;
+}
+
+#tomtecha-info p:first-of-type {
+    margin-bottom: 10px;
+    margin-top: -1rem;
+}
+
+#tomtecha-info a {
+    color: DarkGreen;
+}
+
+/* contacts section */
+#contacts {
+    background-color: var(--platinum); 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    padding: 5rem 0;
 }
 
-.icon {
-    transform: scale(5);
+#contacts div {
+    margin: auto;
+    width: max-content;
 }
 
-.icon a {
-    color: var(--davys-grey);
+#contacts-list li {
+    list-style: none;
+    line-height: 2rem;
 }
-
-.icon a svg:hover {
-    color: var(--platinum);
-}
-
 
 
 @media (max-width: 700px) {
-    #services h1 {
+    #entry-section h1 {
         font-size: 1.5rem;
-    }
-
-    #services p {
-        float: none;
     }
 
     #name {
         font-size: 7.5rem;
     }
 
-    #about-us h1 {
+    #services h1 {
         font-size: 1.3rem;
     }
 
-    #contacts p {
+    #about-us p {
         font-size: 115%;
     }
 
@@ -273,11 +302,11 @@ div.service-block:nth-of-type(4) img {
         font-size: 5rem;
     }
 
-    #about-us h1 {
+    #services h1 {
         font-size: 1.2rem;
     }
 
-    #contacts p {
+    #about-us p {
         font-size: 107.5%;
     }
 }
