@@ -290,6 +290,13 @@ div.service-block:nth-of-type(4) img {
 #contacts-list li {
     list-style: none;
     line-height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon {
+    width: 36px;
+    padding: 8px;
 }
 
 footer {
