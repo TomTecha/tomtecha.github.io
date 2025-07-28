@@ -392,8 +392,8 @@ footer p:nth-of-type(2) {
         display: block;
     }
 
-    #links {
-        display: none;
+    .hidden-links {
+        display: none !important;
     }
 
     .expanded-links {

@@ -3,14 +3,15 @@ if (window.innerWidth <= 650) {
 	const menu = document.querySelector('#menu');
 	menu.onclick = toggleMenu;
 	links.onclick = toggleMenu;
+	links.classList.toggle('hidden-links');
 	function toggleMenu() {
 		links.classList.toggle('expanded-links');
-		if (links.classList.contains('expanded-links')) {
-			links.style.display = 'flex';
-		} else {
-			links.style.display = 'none';
-		}
+		links.classList.toggle('hidden-links');
 	}
+
+	screen.orientation.addEventListener('change', () => {
+		document.querySelector('#navbar').style.backgroundColor = 'red';
+	});
 }
 
 											// UNFINISHED!!!!
