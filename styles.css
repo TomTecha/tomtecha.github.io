@@ -24,10 +24,14 @@ body {
     color: var(--davys-grey);
 }
 
+a:not(.navlink) {
+    color: DarkGreen;
+}
+
 /* Navbar styling */
 #navbar {
     height: 44px;
-    background-color: rgba(221, 229, 228, 0.85);
+    background-color: rgba(221, 229, 228, 0.95);
     display: flex;
     align-items: center;
     position: sticky;
@@ -74,6 +78,20 @@ body {
     font-family: 'Gabarito', Helvetica, Arial, sans-serif;
 }
 
+#menu {
+    height: 44px;
+    width: 44px;
+    display: none;
+}
+
+#menu:hover {
+    cursor: pointer;
+}
+
+#menu-icon {
+    margin: 4.4px;
+    width: 35.2px;
+}
 
 #links {
     width: 16rem;
@@ -101,8 +119,6 @@ body {
 /* entry section */
 #entry-section {
     padding: 3rem 0 4rem;
-    height: 100vh;
-    max-height: 900px;
     background-color: var(--jet-stream);
     color: var(--davys-grey);
     display: flex;
@@ -191,7 +207,7 @@ div.service-block:nth-of-type(4) img {
     padding: 5rem 0;
 }
 
-#services h1 {
+#services h2 {
     font-family: 'Gabarito', Helvetica;
     font-weight: initial;
     margin-bottom: 15px;
@@ -216,6 +232,11 @@ div.service-block:nth-of-type(4) img {
 #wind-turbine-img {
     max-height: 500px;
     transform: scaleX(-1);
+}
+
+#battery-img {
+    max-height: 115px;
+    display: none;
 }
 
 /* about us section */
@@ -245,10 +266,6 @@ div.service-block:nth-of-type(4) img {
     margin-top: -1rem;
 }
 
-#tomtecha-info a {
-    color: DarkGreen;
-}
-
 /* contacts section */
 #contacts {
     background-color: var(--platinum); 
@@ -256,7 +273,7 @@ div.service-block:nth-of-type(4) img {
 
 #contacts div {
     margin: auto;
-    min-height: 400px;
+    min-height: 300px;
     width: max-content;
     display: flex;
     flex-direction: column;
@@ -278,49 +295,152 @@ div.service-block:nth-of-type(4) img {
 footer {
     background-color: var(--ash-gray);
     height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-@media (max-width: 700px) {
-    #entry-section h1 {
-        font-size: 1.5rem;
+footer p {
+    font-family: Inter, Helvetica;
+}
+
+footer p:nth-of-type(2) {
+    margin-top: 0.25rem;
+    font-size: 12px;
+}
+
+/* Responsiveness */
+@media (max-width: 1300px) {
+    #entry-section {
+        height: 1200px;
+    }
+
+    #services-graphics {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 822px;
+    }
+
+    .service-block {
+        margin: 0 5vw;
+        height: 360px;
+        width: calc(265px + 1rem);
+        position: relative;
+    }
+
+    div.service-block:nth-of-type(1) {
+        bottom: 0;
+    }
+
+    div.service-block:nth-of-type(2) {
+        top: 0;
+    }
+
+    div.service-block:nth-of-type(2) img {
+        width: 79%;
+    }
+
+    div.service-block:nth-of-type(3) {
+        bottom: 0;
+        line-height: 4.25rem;
+    }
+
+    div.service-block:nth-of-type(4) {
+        top: 0;
+    }
+
+    #wind-turbine-img {
+        max-height: 375px;
+    }
+}
+
+@media (max-width: 800px) {
+    #tomtecha-info {
+        width: 75%;
+    }
+}
+
+@media (max-width: 650px) {
+    h2 {
+        font-size: max(3.5vw, 1.25rem);
     }
 
     #name {
-        font-size: 7.5rem;
+        font-size: 20vw;
     }
 
-    #services h1 {
-        font-size: 1.3rem;
+    #entry-section {
+        height: 1325px;
     }
 
-    #about-us p {
-        font-size: 115%;
+    #entry-section h2 {
+        font-size: max(3.5vw, 1rem);
     }
 
-    #icons {
-        justify-content: space-evenly;
+    #menu {
+        display: block;
     }
 
-    .icon {
-        transform: scale(3.75);
+    #links {
+        display: none;
+    }
+
+    .expanded-links {
+        position: absolute;
+        top: 44px;
+        left: 0;
+        width: 100vw !important;
+        height: max-content;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(221, 229, 228, 0.95);
+    }
+
+    .expanded-links a {
+        line-height: 3rem;
+    }
+
+    #services-graphics {
+        width: 411px;
+    }
+
+    div.service-block {
+        height: 330px;
+        width: 260px;
+    }
+
+    div.service-block p {
+        font-size: 0.9rem;
+    }
+
+    div.service-block:nth-of-type(3) {
+        display: none;
+    }
+
+    #services {
+        padding: 0;
+    }
+
+    #services-and-illustrations {
+        flex-direction: column;
+        width: 75%;
+    }
+
+    #wind-turbine-img {
+        display: none;
+    }
+
+    #battery-img {
+        display: block;
+    }
+
+    #services-spacer {
+        display: none;
+    }
+
+    #contacts-list li {
+        font-size: 0.92rem;
     }
 }
-
-@media (max-width: 500px) {
-    #services h1 {
-        font-size: 1.25rem;
-    }
-
-    #name {
-        font-size: 5rem;
-    }
-
-    #services h1 {
-        font-size: 1.2rem;
-    }
-
-    #about-us p {
-        font-size: 107.5%;
-    }
-}
-
