@@ -20,7 +20,7 @@ html {
 
 body {
     font-family: Helvetica;
-    background-color: var(--jet-stream);
+    background-color: var(--platinum);
     color: var(--davys-grey);
 }
 
@@ -430,6 +430,10 @@ footer p:nth-of-type(2) {
 
     #services {
         padding: 0;
+    }
+
+    #services-graphics {
+        width: 100vw;
     }
 
     #services-and-illustrations {
