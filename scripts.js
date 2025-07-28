@@ -1,16 +1,16 @@
 if (window.innerWidth <= 650) {
 	const links = document.querySelector('#links');
 	const menu = document.querySelector('#menu');
-	let expanded = false;
-	menu.onclick = () => {
+	menu.onclick = toggleMenu;
+	links.onclick = toggleMenu;
+	function toggleMenu() {
 		links.classList.toggle('expanded-links');
-		expanded = !expanded;
-		if (!expanded) {
-			links.style.display = 'none';
-		} else {
+		if (links.classList.contains('expanded-links')) {
 			links.style.display = 'flex';
+		} else {
+			links.style.display = 'none';
 		}
-	};
+	}
 }
 
 											// UNFINISHED!!!!
