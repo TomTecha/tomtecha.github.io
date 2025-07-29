@@ -4,14 +4,18 @@ if (window.innerWidth <= 650) {
 	menu.onclick = toggleMenu;
 	links.onclick = toggleMenu;
 	links.classList.toggle('hidden-links');
+
+	screen.orientation.addEventListener('change', (event) => {
+		const type = event.target.type;
+		if ((type === 'landscape-primary' || type === 'landscape-secondary') && links.classLists.contains('expanded-links')) {
+			toggleMenu;
+		}
+	});
+
 	function toggleMenu() {
 		links.classList.toggle('expanded-links');
 		links.classList.toggle('hidden-links');
 	}
-
-	screen.orientation.addEventListener('change', () => {
-		document.querySelector('#navbar').style.backgroundColor = 'red';
-	});
 }
 
 											// UNFINISHED!!!!
