@@ -151,6 +151,7 @@ a:not(.navlink) {
 #name {
     font-family: 'Gabarito', Helvetica;
     font-size: 8rem;
+    font-weight: initial;
     color: rgba(211, 211, 211, 0.25);
 }
 
@@ -250,7 +251,7 @@ div.service-block:nth-of-type(4) img {
 
 /* about us section */
 #about-us {
-    height: 500px;
+    height: 550px;
     border-top: solid 1.5rem var(--ash-gray);
     border-bottom: solid 1.5rem var(--ash-gray);
     font-family: Jost;
@@ -464,6 +465,10 @@ footer p:nth-of-type(2) {
 
     #services-spacer {
         display: none;
+    }
+
+    #about-us {
+        height: 625px;
     }
 
     #contacts-list li {
