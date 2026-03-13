@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { TomTechaLogoIcon } from "@/app/components/Logo";
 
 export default function Navbar() {
   const { t, toggleLanguage } = useLanguage();
@@ -23,11 +24,19 @@ export default function Navbar() {
     }
   };
 
+  const navLinkCls = isScrolled
+    ? "px-4 py-2 text-slate-700 hover:text-green-700 hover:bg-green-50 rounded-lg text-sm font-medium transition-all duration-200"
+    : "px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg text-sm font-medium transition-all duration-200";
+
+  const langBtnCls = isScrolled
+    ? "ml-3 px-3 py-1.5 border border-green-600/60 text-green-700 hover:bg-green-600 hover:text-white rounded-lg text-sm font-semibold transition-all duration-200"
+    : "ml-3 px-3 py-1.5 border border-white/60 text-white hover:bg-white hover:text-green-800 rounded-lg text-sm font-semibold transition-all duration-200";
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-slate-900/95 backdrop-blur-md shadow-lg"
+          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100"
           : "bg-transparent"
       }`}
     >
@@ -35,14 +44,16 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => scrollTo("home")}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-2.5 group"
           aria-label="TomTecha"
         >
-          <div className="w-8 h-8 bg-amber-400 rounded-lg flex items-center justify-center group-hover:bg-amber-300 transition-colors">
-            <Zap className="w-5 h-5 text-slate-900" strokeWidth={2.5} />
-          </div>
-          <span className="font-bold text-lg text-white tracking-tight">
-            Tom<span className="text-amber-400">Techa</span>
+          <TomTechaLogoIcon size={34} className="group-hover:scale-105 transition-transform duration-200" />
+          <span
+            className={`font-bold text-lg tracking-tight transition-colors duration-300 ${
+              isScrolled ? "text-green-900" : "text-white"
+            }`}
+          >
+            Tom<span className="text-green-500">Techa</span>
           </span>
         </button>
 
@@ -55,18 +66,11 @@ export default function Navbar() {
               { key: "contact", label: t.nav.contact },
             ] as { key: string; label: string }[]
           ).map(({ key, label }) => (
-            <button
-              key={key}
-              onClick={() => scrollTo(key)}
-              className="px-4 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg text-sm font-medium transition-all duration-200"
-            >
+            <button key={key} onClick={() => scrollTo(key)} className={navLinkCls}>
               {label}
             </button>
           ))}
-          <button
-            onClick={toggleLanguage}
-            className="ml-3 px-3 py-1.5 border border-amber-400/60 text-amber-400 hover:bg-amber-400 hover:text-slate-900 rounded-lg text-sm font-semibold transition-all duration-200"
-          >
+          <button onClick={toggleLanguage} className={langBtnCls}>
             {t.nav.langToggle}
           </button>
         </div>
@@ -75,13 +79,17 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 border border-amber-400/60 text-amber-400 rounded-lg text-sm font-semibold"
+            className={`px-3 py-1 border rounded-lg text-sm font-semibold transition-all duration-200 ${
+              isScrolled
+                ? "border-green-600/60 text-green-700 hover:bg-green-600 hover:text-white"
+                : "border-white/60 text-white hover:bg-white/20"
+            }`}
           >
             {t.nav.langToggle}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-white p-1"
+            className={`p-1 transition-colors ${isScrolled ? "text-slate-700" : "text-white"}`}
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,7 +99,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-slate-900/98 backdrop-blur-md border-t border-slate-700">
+        <div className="md:hidden bg-white/98 backdrop-blur-md border-t border-gray-100 shadow-lg">
           <div className="px-4 py-3 space-y-1">
             {(
               [
@@ -103,7 +111,7 @@ export default function Navbar() {
               <button
                 key={key}
                 onClick={() => scrollTo(key)}
-                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg text-base font-medium transition-all"
+                className="block w-full text-left px-4 py-3 text-slate-700 hover:text-green-700 hover:bg-green-50 rounded-lg text-base font-medium transition-all"
               >
                 {label}
               </button>

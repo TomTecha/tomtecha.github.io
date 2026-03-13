@@ -36,21 +36,21 @@ export default function Contact() {
   };
 
   const inputCls =
-    "w-full bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400/60 focus:bg-slate-800 transition-colors";
+    "w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100 transition-all";
 
   return (
-    <section id="contact" className="bg-slate-950 py-24 lg:py-32">
+    <section id="contact" className="bg-green-50 py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 text-amber-400 text-sm font-medium px-4 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-green-100 border border-green-200 text-green-700 text-sm font-medium px-4 py-2 rounded-full mb-6">
             <Send className="w-4 h-4" />
             {t.contact.badge}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-4">
             {t.contact.title}
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             {t.contact.subtitle}
           </p>
         </div>
@@ -59,15 +59,15 @@ export default function Contact() {
           {/* Contact form */}
           <div className="lg:col-span-3">
             {status === "success" ? (
-              <div className="flex flex-col items-center justify-center py-20 gap-4">
-                <CheckCircle2 className="w-16 h-16 text-emerald-400" />
-                <p className="text-white text-lg font-semibold">{f.success}</p>
+              <div className="flex flex-col items-center justify-center py-20 gap-4 bg-white rounded-2xl border border-green-100">
+                <CheckCircle2 className="w-16 h-16 text-green-500" />
+                <p className="text-green-800 text-lg font-semibold">{f.success}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-2xl border border-green-100 p-6 sm:p-8 shadow-sm">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       {f.name}
                     </label>
                     <input
@@ -82,7 +82,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       {f.email}
                     </label>
                     <input
@@ -100,7 +100,7 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       {f.phone}
                     </label>
                     <input
@@ -114,7 +114,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       {f.service}
                     </label>
                     <select
@@ -137,7 +137,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
                     {f.message}
                   </label>
                   <textarea
@@ -162,7 +162,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 disabled:bg-amber-400/50 text-slate-900 font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-amber-400/20 hover:shadow-amber-400/30"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 disabled:bg-green-400 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-green-600/20 hover:shadow-green-600/30"
                 >
                   {status === "sending" ? (
                     <>
@@ -182,21 +182,21 @@ export default function Contact() {
 
           {/* Contact info */}
           <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-white font-semibold text-lg">{info.title}</h3>
+            <h3 className="text-green-900 font-semibold text-lg">{info.title}</h3>
 
             <div className="space-y-4">
               <a
                 href="tel:+370600000000"
                 className="flex items-start gap-4 group"
               >
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-400/20 transition-colors">
-                  <Phone className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 bg-green-100 border border-green-200 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-green-200 transition-colors">
+                  <Phone className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <p className="text-slate-500 text-xs uppercase tracking-wider mb-0.5">
                     {info.phone}
                   </p>
-                  <p className="text-white text-sm font-medium">+370 600 000 000</p>
+                  <p className="text-slate-800 text-sm font-medium">+370 600 000 000</p>
                 </div>
               </a>
 
@@ -204,40 +204,40 @@ export default function Contact() {
                 href="mailto:info@tomtecha.lt"
                 className="flex items-start gap-4 group"
               >
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-400/20 transition-colors">
-                  <Mail className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 bg-green-100 border border-green-200 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-green-200 transition-colors">
+                  <Mail className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <p className="text-slate-500 text-xs uppercase tracking-wider mb-0.5">
                     {info.email}
                   </p>
-                  <p className="text-white text-sm font-medium">
+                  <p className="text-slate-800 text-sm font-medium">
                     info@tomtecha.lt
                   </p>
                 </div>
               </a>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 bg-green-100 border border-green-200 rounded-xl flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <p className="text-slate-500 text-xs uppercase tracking-wider mb-0.5">
                     {info.address}
                   </p>
-                  <p className="text-white text-sm font-medium">{info.addressValue}</p>
+                  <p className="text-slate-800 text-sm font-medium">{info.addressValue}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 bg-green-100 border border-green-200 rounded-xl flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
                   <p className="text-slate-500 text-xs uppercase tracking-wider mb-0.5">
                     {info.hours}
                   </p>
-                  <p className="text-white text-sm font-medium whitespace-pre-line">
+                  <p className="text-slate-800 text-sm font-medium whitespace-pre-line">
                     {info.hoursValue}
                   </p>
                 </div>

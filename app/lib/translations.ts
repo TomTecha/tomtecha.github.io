@@ -10,6 +10,7 @@ export const translations = {
     },
     hero: {
       badge: "Patikimas techninis partneris",
+      videoTagline: "Važiuokite be trukdžių,\nvažiuokite su TomTecha",
       headline: "Profesionalus elektros sistemų remontas",
       subheadline:
         "Hibridinių ir elektrinių automobilių baterijų remontas. Vėjo jėgainių techninė priežiūra ir remontas.",
@@ -138,6 +139,7 @@ export const translations = {
     },
     hero: {
       badge: "Your trusted technical partner",
+      videoTagline: "Drive without worries,\ndrive with TomTecha",
       headline: "Professional Electrical Systems Repair",
       subheadline:
         "Hybrid & electric vehicle battery repairs. Wind turbine maintenance and repair services.",

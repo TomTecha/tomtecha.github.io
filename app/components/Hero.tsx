@@ -1,7 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { ArrowRight, ShieldCheck, Award, Clock } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
+
+// Load canvas animation only on the client (no SSR)
+const AnimatedHeroBg = dynamic(() => import("@/app/components/AnimatedHeroBg"), {
+  ssr: false,
+});
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -20,43 +26,41 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-amber-500/10 via-transparent to-transparent rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-blue-600/10 via-transparent to-transparent rounded-full blur-3xl animate-pulse delay-1000" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
+      {/* Animated night-road background (canvas) */}
+      <AnimatedHeroBg />
 
+      {/* Gradient overlay — ensures text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60 z-[1]" />
+
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 text-amber-400 text-sm font-medium px-4 py-2 rounded-full mb-8">
-          <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+
+        {/* ── Catchy tagline — the "video text" ── */}
+        <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg whitespace-pre-line tracking-tight">
+          {t.hero.videoTagline}
+        </p>
+
+        {/* Subtle divider */}
+        <div className="flex items-center justify-center gap-3 mb-10">
+          <span className="w-12 h-px bg-green-400/60" />
+          <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+          <span className="w-12 h-px bg-green-400/60" />
+        </div>
+
+        {/* Trust badge pill */}
+        <div className="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/40 text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-8 backdrop-blur-sm">
+          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           {t.hero.badge}
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-          <span className="block">Tom</span>
-          <span className="block text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-amber-200">
-            Techa
-          </span>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white/90 leading-snug mb-4 max-w-3xl mx-auto">
+          {t.hero.headline}
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-medium mb-4 max-w-3xl mx-auto">
-          {t.hero.headline}
-        </p>
-
-        <p className="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
           {t.hero.subheadline}
         </p>
 
@@ -64,14 +68,14 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <button
             onClick={() => scrollTo("contact")}
-            className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 shadow-lg shadow-amber-400/20 hover:shadow-amber-400/40 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 shadow-lg shadow-green-500/30 hover:shadow-green-400/40 hover:-translate-y-0.5"
           >
             {t.hero.cta}
             <ArrowRight className="w-5 h-5" />
           </button>
           <button
             onClick={() => scrollTo("services")}
-            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
           >
             {t.hero.ctaServices}
           </button>
@@ -82,9 +86,9 @@ export default function Hero() {
           {badges.map(({ icon: Icon, text }) => (
             <div
               key={text}
-              className="flex items-center gap-2 text-slate-400 text-sm"
+              className="flex items-center gap-2 text-white/70 text-sm backdrop-blur-sm"
             >
-              <Icon className="w-5 h-5 text-amber-400" />
+              <Icon className="w-5 h-5 text-green-400" />
               <span>{text}</span>
             </div>
           ))}
@@ -94,11 +98,11 @@ export default function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={() => scrollTo("services")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/40 hover:text-white/70 transition-colors"
         aria-label="Scroll down"
       >
-        <span className="w-px h-10 bg-gradient-to-b from-transparent to-slate-500" />
-        <span className="w-1.5 h-1.5 bg-slate-500 rounded-full animate-bounce" />
+        <span className="w-px h-10 bg-gradient-to-b from-transparent to-white/40" />
+        <span className="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce" />
       </button>
     </section>
   );
