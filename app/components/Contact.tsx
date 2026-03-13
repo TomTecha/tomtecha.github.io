@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, SubmitEvent } from "react";
 import {
   Phone,
   Mail,
@@ -26,7 +26,7 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: SubmitEvent) => {
     e.preventDefault();
     setStatus("sending");
     // Simulate a form submission (no backend yet)
@@ -189,7 +189,7 @@ export default function Contact() {
                 href="tel:+370600000000"
                 className="flex items-start gap-4 group"
               >
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-amber-400/20 transition-colors">
+                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-400/20 transition-colors">
                   <Phone className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
@@ -204,7 +204,7 @@ export default function Contact() {
                 href="mailto:info@tomtecha.lt"
                 className="flex items-start gap-4 group"
               >
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-amber-400/20 transition-colors">
+                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-400/20 transition-colors">
                   <Mail className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
@@ -218,7 +218,7 @@ export default function Contact() {
               </a>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
@@ -230,7 +230,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center shrink-0">
                   <Clock className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>

@@ -47,7 +47,7 @@ export default function Hero() {
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
           <span className="block">Tom</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">
+          <span className="block text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-amber-200">
             Techa
           </span>
         </h1>
