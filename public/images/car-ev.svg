@@ -1,0 +1,104 @@
+<svg viewBox="0 0 480 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Road surface -->
+  <rect x="0" y="160" width="480" height="40" fill="#e2e8f0" rx="2"/>
+  <rect x="0" y="158" width="480" height="4" fill="#cbd5e1"/>
+  <!-- Road dashes -->
+  <rect x="40" y="176" width="40" height="4" fill="white" rx="2"/>
+  <rect x="120" y="176" width="40" height="4" fill="white" rx="2"/>
+  <rect x="200" y="176" width="40" height="4" fill="white" rx="2"/>
+  <rect x="280" y="176" width="40" height="4" fill="white" rx="2"/>
+  <rect x="360" y="176" width="40" height="4" fill="white" rx="2"/>
+
+  <!-- Car body - Tesla Model 3 style (fastback/sleek sedan) -->
+  <path d="M55 160 L72 118 Q85 82 130 74 L310 74 Q365 80 400 110 L425 140 L430 160 Z" fill="#14532d"/>
+  <!-- Lower body (lighter) -->
+  <path d="M55 160 L72 140 L430 140 L430 160 Z" fill="#166534"/>
+  <!-- Body highlight / shoulder line -->
+  <path d="M90 100 Q120 86 160 82 L300 80 Q355 82 392 104 L380 96 Q346 80 300 78 L160 78 Q122 80 88 96 Z" fill="#22c55e" opacity="0.45"/>
+
+  <!-- Panoramic glass roof (distinctive Tesla feature) -->
+  <path d="M135 74 L150 62 Q200 54 280 54 Q320 54 350 64 L370 76 L135 76 Z" fill="#4ade80" opacity="0.2"/>
+  <path d="M150 72 L165 60 Q210 52 270 52 Q310 52 340 62 L355 74 L150 74 Z" fill="#bbf7d0" opacity="0.55"/>
+
+  <!-- Windscreen -->
+  <path d="M135 76 L165 82 L168 112 L122 112 Z" fill="#bbf7d0" opacity="0.8"/>
+  <!-- Main side windows -->
+  <path d="M175 82 L240 80 L242 112 L172 112 Z" fill="#bbf7d0" opacity="0.8"/>
+  <path d="M250 80 L318 82 L316 112 L248 112 Z" fill="#bbf7d0" opacity="0.8"/>
+  <!-- Rear quarter glass -->
+  <path d="M325 82 L358 88 L356 112 L322 112 Z" fill="#bbf7d0" opacity="0.7"/>
+
+  <!-- Window dividers -->
+  <rect x="170" y="80" width="5" height="32" fill="#14532d" rx="1"/>
+  <rect x="244" y="79" width="5" height="33" fill="#14532d" rx="1"/>
+  <rect x="318" y="80" width="5" height="32" fill="#14532d" rx="1"/>
+
+  <!-- Front bumper (flush) -->
+  <path d="M425 140 L440 148 L440 162 L425 162 Z" fill="#0f4023"/>
+  <!-- Full-width LED strip (signature EV feature) -->
+  <rect x="425" y="136" width="15" height="3" fill="#4ade80" rx="1"/>
+  <!-- Headlights -->
+  <path d="M427 140 L439 146 L439 158 L427 158 Z" fill="#dcfce7" opacity="0.85"/>
+
+  <!-- Rear end -->
+  <path d="M55 140 L42 148 L42 162 L55 162 Z" fill="#0f4023"/>
+  <!-- Full-width LED tail bar -->
+  <rect x="42" y="136" width="14" height="3" fill="#22c55e" rx="1"/>
+  <rect x="42" y="147" width="14" height="11" fill="#bbf7d0" opacity="0.65" rx="2"/>
+
+  <!-- Side mirror -->
+  <path d="M410 112 L420 110 L420 118 L410 120 Z" fill="#14532d"/>
+
+  <!-- Door handles (flush / recessed) -->
+  <rect x="180" y="128" width="22" height="5" fill="#0f4023" rx="2.5"/>
+  <rect x="300" y="128" width="22" height="5" fill="#0f4023" rx="2.5"/>
+
+  <!-- Side sill with green accent line -->
+  <path d="M72 150 L425 150" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" opacity="0.7"/>
+  <path d="M72 152 L425 152" stroke="#14532d" strokeWidth="1.5" strokeLinecap="round"/>
+
+  <!-- Front wheel (aero wheel) -->
+  <circle cx="368" cy="163" r="27" fill="#0f172a"/>
+  <circle cx="368" cy="163" r="19" fill="#1e293b"/>
+  <circle cx="368" cy="163" r="13" fill="#334155"/>
+  <circle cx="368" cy="163" r="6" fill="#64748b"/>
+  <!-- Aero wheel pattern -->
+  <path d="M368 146 L368 156" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+  <path d="M368 170 L368 180" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+  <path d="M351 163 L361 163" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+  <path d="M375 163 L385 163" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+
+  <!-- Rear wheel (aero wheel) -->
+  <circle cx="118" cy="163" r="27" fill="#0f172a"/>
+  <circle cx="118" cy="163" r="19" fill="#1e293b"/>
+  <circle cx="118" cy="163" r="13" fill="#334155"/>
+  <circle cx="118" cy="163" r="6" fill="#64748b"/>
+  <!-- Aero wheel pattern -->
+  <path d="M118 146 L118 156" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+  <path d="M118 170 L118 180" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+  <path d="M101 163 L111 163" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+  <path d="M125 163 L135 163" stroke="#94a3b8" strokeWidth="3" strokeLinecap="round"/>
+
+  <!-- EV / BEV badge -->
+  <rect x="190" y="148" width="32" height="14" fill="#14532d" rx="3"/>
+  <text x="206" y="158" fontFamily="Arial" fontWeight="bold" fontSize="7.5" fill="#4ade80" textAnchor="middle">EV</text>
+
+  <!-- Electric badge -->
+  <rect x="234" y="148" width="60" height="14" fill="#166534" rx="3"/>
+  <text x="264" y="158" fontFamily="Arial" fontWeight="bold" fontSize="7" fill="white" textAnchor="middle">ELECTRIC</text>
+
+  <!-- Charging port (open with cable suggestion) -->
+  <rect x="417" y="114" width="11" height="16" fill="#0f4023" rx="2"/>
+  <circle cx="422" cy="122" r="4" fill="#166534"/>
+  <circle cx="422" cy="122" r="2.5" fill="#4ade80" opacity="0.9"/>
+  <!-- Charging indicator light (green = full) -->
+  <circle cx="422" cy="116" r="1.5" fill="#22c55e"/>
+
+  <!-- Green underglow -->
+  <ellipse cx="243" cy="166" rx="175" ry="9" fill="#22c55e" opacity="0.15"/>
+
+  <!-- Speed lines (motion) -->
+  <path d="M10 130 L50 130" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+  <path d="M10 138 L40 138" stroke="#22c55e" strokeWidth="1" strokeLinecap="round" opacity="0.2"/>
+  <path d="M10 122 L35 122" stroke="#22c55e" strokeWidth="1" strokeLinecap="round" opacity="0.2"/>
+</svg>
